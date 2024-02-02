@@ -1,5 +1,5 @@
 config:
-  target: http://localhost:9966/petclinic/api
+  target: https://gorest.co.in/
   phases:
     # Pause phase - no virtual users for 60 seconds
     # - name: nothing
@@ -23,7 +23,9 @@ config:
       arrivalCount: 120    
 
 scenarios:
-- name: petclinic
+- name: No Corelation
   flow:
   - get:
-      url: /pets
+      url: /public/v2/users/6136260
+      headers:
+        Authorization: Bearer d9e1a7df360f6ea18c8c27c3be8122527103c740dfda2c6b3298cd7cab2aa544
