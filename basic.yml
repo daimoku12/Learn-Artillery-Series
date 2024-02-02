@@ -20,12 +20,12 @@ config:
     # this will create 120 virtual users in 1 minute
     - name: fixed_arrivals
       duration: 60
-      arrivalCount: 120    
+      arrivalCount: 120   
 
 scenarios:
 - name: No Corelation
   flow:
   - get:
-      url: /public/v2/users/6136260
+      url: /public/v1/users/6136260
       headers:
         Authorization: Bearer d9e1a7df360f6ea18c8c27c3be8122527103c740dfda2c6b3298cd7cab2aa544

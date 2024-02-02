@@ -1,0 +1,39 @@
+config:
+  target: https://gorest.co.in/
+  phases:
+    - name: smoke_testing
+      duration: 1
+      arrivalRate: 1
+  payload:
+    path: ./test-data/corelation-data.csv
+    order: sequence           # default: random
+    # loadAll: true             
+    skipHeader: true          # default: false  
+    delimiter: ","            # default: ,
+    skipEmptyLines: true      # default: true
+    fields:
+      - "name"
+      - "gender"
+      - "email"
+      - "status"
+
+scenarios:
+- name: Correlation
+  flow:
+  - post:
+      url: /public/v1/users
+      headers:
+        Authorization: Bearer d9e1a7df360f6ea18c8c27c3be8122527103c740dfda2c6b3298cd7cab2aa544
+      json:
+        name: "{{ name }}"
+        gender: "{{ gender }}"
+        email: "{{ email }}"
+        status: "{{ status }}"
+      capture:
+        json: "$.data.id"
+        as: "id"
+
+  - get:
+      url: "/public/v1/users/{{ id }}"
+      headers:
+        Authorization: Bearer d9e1a7df360f6ea18c8c27c3be8122527103c740dfda2c6b3298cd7cab2aa544
