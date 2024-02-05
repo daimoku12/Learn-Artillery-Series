@@ -3,11 +3,11 @@ config:
   phases:
     - name: smoke_testing
       duration: 1
-      arrivalRate: 1
+      arrivalCount: 5
   payload:
     path: ./test-data/corelation-data.csv
     order: sequence           # default: random
-    # loadAll: true             
+    loadAll: true             
     skipHeader: true          # default: false  
     delimiter: ","            # default: ,
     skipEmptyLines: true      # default: true

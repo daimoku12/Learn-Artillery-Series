@@ -6,7 +6,7 @@ npm install artillery-plugin-expect
 --Debugging
 
 DEBUG=https:request artillery run corelation.yml
-set DEBUG=http*:response
+set DEBUG=http:response
 
 --Assertions
 
