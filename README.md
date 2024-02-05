@@ -1,17 +1,19 @@
-# Learn Artillery Series
+--Installation
 
-Complete Series is in progress.
+npm install -g artillery@latest
+npm install artillery-plugin-expect
 
-Please check [https://www.youtube.com/playlist?list=PLJ9A48W0kpRJh1_uW2mVNhSIVCMYmNlm7](https://www.youtube.com/playlist?list=PLJ9A48W0kpRJh1_uW2mVNhSIVCMYmNlm7)
+--Debugging
 
-This series will cover
+DEBUG=https:request artillery run corelation.yml
+set DEBUG=http*:response
 
-- [x] Introduction
-- [x] Hello Web Service
-- [x] Data Parameterization
-- [x] Extraction
-- [x] Validation
-- [x] Debugging
-- [x] Reporting
-- [ ] Serverless Performance Testing
-- [ ] CI/CD Integration
+--Assertions
+
+set DEBUG=plugin:expect
+artillery run my-script.yaml
+
+--Reporting (Generate a JSON and convert to HTML)
+ 
+ artillery run correlation1.yml --output smoke.json
+ artillery report smoke.json
