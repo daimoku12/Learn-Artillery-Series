@@ -17,3 +17,5 @@ artillery run my-script.yaml
  
  artillery run correlation1.yml --output smoke.json
  artillery report smoke.json
+
+ C:\Users\kunal.malik\AppData\Roaming\npm\artillery run basic_pricing.yml

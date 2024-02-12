@@ -6,9 +6,9 @@ config:
     #   pause: 10
 
     # this injects 10 virtual users every second for 60 seconds
-    # - name: constant_arrival_rate
-    #   duration: 60
-    #   arrivalRate: 10
+    - name: constant_arrival_rate
+      duration: 60
+      arrivalRate: 10
     
     # this ramp ups virtual users from 10 to 50 in 60 seconds 
     # - name: rampup_rate
@@ -18,14 +18,14 @@ config:
 
     # Fixed number of arrivals per second
     # this will create 120 virtual users in 1 minute
-    - name: fixed_arrivals
-      duration: 60
-      arrivalCount: 120   
+    # - name: fixed_arrivals
+    #   duration: 60
+    #   arrivalCount: 120   
 
 scenarios:
 - name: No Corelation
   flow:
   - get:
-      url: /public/v1/users/6136260
+      url: /public/v1/users/6180179
       headers:
         Authorization: Bearer d9e1a7df360f6ea18c8c27c3be8122527103c740dfda2c6b3298cd7cab2aa544
